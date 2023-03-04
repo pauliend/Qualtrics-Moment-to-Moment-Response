@@ -41,12 +41,12 @@ All that's left to do is publish your survey! Good luck.
     var sliderDataCount = 0;
     var sliderData = {};
 
-    // Define a function to save the slider value to a hidden variable
+    // Define a function to save the slider value to an embedded data field
     function saveSliderValue() {
       // Get the current value of the slider
       var value = slider.val();
 
-    // Save the slider value to a hidden variable
+    // Save the slider value to an embedded data field
     var variableName = "sliderData_" + sliderDataCount;
     Qualtrics.SurveyEngine.setEmbeddedData(variableName, value);
 
