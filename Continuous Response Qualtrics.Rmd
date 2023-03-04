@@ -1,0 +1,66 @@
+---
+title: "R Code Continuous Response Qualtrics"
+author: "Paulien Decorte"
+date: "Created on 3 March 2023, Last Edited on `r format(Sys.time(), '%A %d %B %Y')`"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+toc: yes
+toc_depth: 3
+---
+
+```{r, echo=FALSE}
+# Set so that long lines in R will be wrapped:
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=80), tidy=TRUE)
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+
+```{r}
+
+library(jsonlite)
+library(dplyr)
+df <- df[-c(1:2), ]
+
+```
+
+
+
+```{r}
+
+# Get the maximum number of seconds/keys across all rows
+max_seconds <- max(sapply(df$sliderData, function(x) length(fromJSON(x))))
+
+# Create an empty data frame with the correct number of columns
+new_cols <- paste0("sliderData_", 1:max_seconds)
+new_df <- data.frame(matrix(ncol = length(new_cols), nrow = nrow(df)))
+colnames(new_df) <- new_cols
+
+# Loop through the rows of the data frame
+for (i in 1:nrow(df)) {
+  # Get the JSON data for the current row
+  json_data <- df$sliderData[i]
+  # Convert the JSON data to a list
+  json_list <- fromJSON(json_data)
+  # Loop through the maximum number of seconds/keys and assign the slider values to the new variables
+  for (j in 1:max_seconds) {
+    # Check if the current second/key exists in the JSON data
+    if (as.character(j) %in% names(json_list)) {
+      # Get the value for the current second/key
+      slider_val <- json_list[[as.character(j)]]
+    } else {
+      # Assign NA if the current second/key does not exist in the JSON data
+      slider_val <- NA
+    }
+    # Assign the slider value to the current second/key variable
+    new_df[i, paste0("sliderData_", j)] <- slider_val
+  }
+}
+
+# Combine the new data frame with the original data frame
+new_df <- cbind(df, new_df)
+
+
+```
+
