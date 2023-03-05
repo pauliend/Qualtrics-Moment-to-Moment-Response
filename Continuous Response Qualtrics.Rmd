@@ -1,34 +1,15 @@
----
-title: "R Code Continuous Response Qualtrics"
-author: "Paulien Decorte"
-date: "Created on 3 March 2023, Last Edited on `r format(Sys.time(), '%A %d %B %Y')`"
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
-toc: yes
-toc_depth: 3
----
-
-```{r, echo=FALSE}
-# Set so that long lines in R will be wrapped:
-knitr::opts_chunk$set(tidy.opts=list(width.cutoff=80), tidy=TRUE)
-knitr::opts_chunk$set(eval = FALSE)
-```
 
 
 ```{r}
-
+#Load these packages
 library(jsonlite)
 library(dplyr)
-df <- df[-c(1:2), ]
-
 ```
 
 
 
 ```{r}
-
+#This code parses the JSON string
 # Get the maximum number of seconds/keys across all rows
 max_seconds <- max(sapply(df$sliderData, function(x) length(fromJSON(x))))
 
