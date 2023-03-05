@@ -1,4 +1,3 @@
-// Start of Code
 Qualtrics.SurveyEngine.addOnload(function() {
   // Set up the slider element
     var slider = jQuery("#" + this.questionId + " .ResultsInput");
