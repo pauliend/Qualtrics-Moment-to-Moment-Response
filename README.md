@@ -17,9 +17,6 @@ I'll provide two solutions to create your continuous slider and accompanying var
 ### Qualtrics Embedded Data
 Since we're saving the slider values as embedded data, we're going to need to define those variables first in the Survey Flow. It's important that these variables are defined **before** the question itself, in this case the slider, is shown to the respondent. That's why we'll create an Embedded Data Block in the Survey flow that precedes the slider block. Like so:
 
-<img width="858" alt="Screenshot 2023-03-03 at 16 55 50" src="https://user-images.githubusercontent.com/47788764/222863636-5cef7674-d3f8-4b2a-947d-254b620f49fd.png">
-
-
 ### Where Do I Put The Code? 
 
 In the survey builder, you'll select the slider question and scroll down the left-hand menu of that question. At the bottom, you'll see an option to add Javascript:
