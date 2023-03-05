@@ -32,7 +32,7 @@ df <- df[-c(1:2), ]
 # Get the maximum number of seconds/keys across all rows
 max_seconds <- max(sapply(df$sliderData, function(x) length(fromJSON(x))))
 
-# Create an empty data frame with the correct number of columns
+# Create an empty data frame with the correct number of columns 
 new_cols <- paste0("sliderData_", 1:max_seconds)
 new_df <- data.frame(matrix(ncol = length(new_cols), nrow = nrow(df)))
 colnames(new_df) <- new_cols
