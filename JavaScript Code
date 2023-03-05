@@ -1,0 +1,35 @@
+// Start of Code
+Qualtrics.SurveyEngine.addOnload(function() {
+  // Set up the slider element
+    var slider = jQuery("#" + this.questionId + " .ResultsInput");
+
+ // Set up the interval to capture the slider value every second
+     var interval = setInterval(function() {
+       saveSliderValue();
+     }, 1000);
+
+     // Set up the variables for the slider data
+     var sliderDataCount = 0;
+     var sliderData = {};
+
+    // Define a function to save the slider value to an embedded data field
+     function saveSliderValue() {
+      // Get the current value of the slider
+     var value = slider.val();
+
+     // Increment the count variable
+     sliderDataCount++;
+
+     // Add the slider value to the slider data object
+     sliderData[sliderDataCount-1] = value;
+
+     // Save the slider value to an embedded data field
+     Qualtrics.SurveyEngine.setEmbeddedData("sliderData", JSON.stringify(sliderData));
+     Qualtrics.SurveyEngine.setEmbeddedData("sliderDataCount", sliderDataCount);
+         }
+
+    // Save the slider data as embedded data on survey submission
+      Qualtrics.SurveyEngine.addOnUnload(function() {
+     clearInterval(interval);
+         });
+    });
