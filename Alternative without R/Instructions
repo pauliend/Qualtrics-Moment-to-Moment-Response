@@ -1,9 +1,13 @@
 
-### Option without R.
-In the easier, but less foolproof option, you'll have to assign all your "sliderData_" variables in the survey flow. You'll do this by adding the second to sliderData, resulting in sliderData_1, sliderData_2, and so forth for every second you want to capture. 
-You'll also need to **define all the variables of the seconds you want to capture the data for**; If you don't define all these variables, you won't record their data. In my specific use case, the reason I wanted to make this code, I want to capture everyone's data per second, as this allows a full second-by-second analysis and captures different flows of responding per participant (some may report changes often, some may not). This is interesting information for me and that's why all this data will be captured and recorded. 
+# Alternative without R.
+I get it, you don't know R and don't feel like learning an entire new program for this one things. That's fine! This option works, but is less foolproof.
+Here, you'll have to define all your "sliderData_" variables in the survey flow separately. This is the catch, since defining all the accurate seconds you'll need is not easy, and not always possible. That's why I recommend the main solution, because that allows you to simply collect and see how many seconds you end up with. 
+You'll define your "sliderData_" variables by adding the second to "sliderData_", resulting in "sliderData_1", "sliderData_2", and so forth for every second you want to capture. 
+You'll also need to **define all the variables of the seconds you want to capture the data for**; If you don't define all these variables, you won't record their data. In my specific use case, the reason I wanted to make this code, I want to capture everyone's data per second, as this allows a full second-by-second analysis and captures different flows of responding per participant (some may report changes often, some may not). 
 
-#### Where Do I Put The Code? 
+<img width="858" alt="Screenshot 2023-03-03 at 16 55 50" src="https://user-images.githubusercontent.com/47788764/222863636-5cef7674-d3f8-4b2a-947d-254b620f49fd.png">
+
+## Where Do I Put The Code? 
 
 In the survey builder, you'll select the slider question and scroll down the left-hand menu of that question. At the bottom, you'll see an option to add Javascript:
 
@@ -13,7 +17,7 @@ Click on that, and then delete everything that's there and replace it with the c
 
 All that's left to do is publish your survey! Good luck. 
 
-##### The Javascript Code
+### The Javascript Code
 
     //
       Qualtrics.SurveyEngine.addOnload(function() {
