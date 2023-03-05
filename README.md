@@ -78,8 +78,8 @@ In this string, the first value represents the captured second (key), and the se
 
 Now, we'll need to transform this string into separate second-by-second variables so that it's more legible and you can analyze it better. This is where R comes in. With R and the code I provided, you can add new columns for each of these seconds captured in your JSON string. From there, you can keep analyzing that dataset in R or save it as a .csv and import it into SPSS, for instance, if you're more comfortable analyzing data there. Here are the steps to do that:
 
-1. You'll first want to export your Qualtrics data as a .csv and open that in R. 
-2. Then, you can use the code attached in the .rmd file to separate all the second-by-second slider data in their own column.
+1. You'll first want to **export your Qualtrics data as a .csv** and open that in R. 
+2. Then, you can use the code attached in the **Continuous Response Qualtrics.Rmd** file to separate all the second-by-second slider data in their own column.
 
 # Multiple Sliders
 
