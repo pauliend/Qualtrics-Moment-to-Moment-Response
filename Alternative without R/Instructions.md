@@ -1,7 +1,8 @@
 
 # Alternative without R.
-I get it, you don't know R and don't feel like learning an entire new program for this one things. That's fine! This option works, but is less foolproof.
-Here, you'll have to define all your "sliderData_" variables in the survey flow separately. This is the catch, since defining all the accurate seconds you'll need is not easy, and not always possible. That's why I recommend the main solution, because that allows you to simply collect and see how many seconds you end up with. 
+I get it, you don't know R and don't feel like learning an entire new program for this one thing. That's fine! This option works, but is less foolproof.
+
+Here, you'll have to **define all your "sliderData_" variables in the survey flow separately**. This is the catch, since defining all the accurate seconds you'll need is not easy, and not always possible. That's why I recommend the main solution, because that allows you to simply collect and see how many seconds you end up with. 
 You'll define your "sliderData_" variables by adding the second to "sliderData_", resulting in "sliderData_1", "sliderData_2", and so forth for every second you want to capture. 
 You'll also need to **define all the variables of the seconds you want to capture the data for**; If you don't define all these variables, you won't record their data. In my specific use case, the reason I wanted to make this code, I want to capture everyone's data per second, as this allows a full second-by-second analysis and captures different flows of responding per participant (some may report changes often, some may not). 
 
