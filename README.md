@@ -69,7 +69,7 @@ Click on that, and then delete everything that's there and replace it with the c
 
 All that's left to do is publish your survey and you can collect this data!
 
-## Parsing the JSON Code
+## Parsing the JSON String
 When you've collected some data, the JSON string field will look like this:
 
 <img width="746" alt="Screenshot 2023-03-03 at 23 10 27" src="https://user-images.githubusercontent.com/47788764/222881565-2ed5afbe-5fd0-483b-b813-5f18940d206a.png">
